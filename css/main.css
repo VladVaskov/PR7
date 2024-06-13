@@ -1,0 +1,199 @@
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  src:
+    local('Neue Haas Grotesk  Roman'),
+    local('Neue-Haas-Grotesk--Roman'),
+    url('../assets/NeueHaasDisplay-Roman.woff2') format('woff2'),
+    url('../assets/NeueHaasDisplay-Roman.woff') format('woff'),
+    url('../assets/NeueHaasDisplay-Roman.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+html {
+  font-size: calc(16 / 576 * 100vw);
+  background-color: #f5f5f5;
+}
+
+body {
+  font-family: 'Neue Haas Grotesk', Helvetica, arial, sans-serif;
+  color: #141414;
+}
+
+@media (min-width: 576px) {
+  html {
+    font-size: calc(16 / 1440 * 100vw);
+  }
+}
+
+p,
+a {
+  font-size: 1.5625rem;
+  line-height: 1.5;
+  color: inherit;
+}
+
+* {
+  font-weight: normal;
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+.line {
+  height: 0.125rem;
+  margin-bottom: 3.125rem;
+  background-color: black;
+  border: none;
+}
+
+@media (min-width: 576px) {
+  .line {
+    margin-bottom: 6.25rem;
+  }
+}
+
+/* ==================== HEADER ==================== */
+.header {
+  font-size: 1.5rem;
+}
+
+.header__container {
+  height: 6.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  gap: 1.75rem;
+}
+
+.nav__link {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav__link::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 0.125rem;
+  bottom: -0.3125rem;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav__link:hover::before {
+  transform: scaleX(1);
+}
+
+/* ==================== HERO ==================== */
+.hero__container {
+  position: relative;
+  padding-top: 5.125rem;
+  padding-bottom: 5.125rem;
+}
+
+@media (min-width: 576px) {
+  .hero__container {
+    padding-bottom: 10.25rem;
+  }
+}
+
+.hero__title {
+  position: relative;
+  font-size: 4.3125rem;
+  line-height: 1.3;
+  display: inline;
+  color: #f5f5f5;
+  mix-blend-mode: exclusion;
+  z-index: 1;
+}
+
+.hero__image {
+  display: block;
+  object-fit: cover;
+  max-width: 100%;
+  top: 5.125rem;
+  right: calc(var(--bs-gutter-x) / 2);
+  margin-top: 5.125rem;
+  position: static;
+  transform-origin: 100% 50%;
+}
+
+@media (min-width: 576px) {
+  .hero__image {
+    transform: perspective(1500px) rotateY(-15deg);
+    transition: transform 0.7s ease 0s;
+    width: auto;
+    height: calc(100% - 5.125rem * 3);
+    margin-top: 0;
+    position: absolute;
+  }
+
+  .hero__image:hover {
+    transform: perspective(3000px) rotateY(7.5deg) scale(1.03125);
+  }
+}
+
+/* ==================== PROJECTS ==================== */
+.projects__container {
+  padding-top: 5.125rem;
+  padding-bottom: 5.125rem;
+}
+
+.projects__title {
+  font-size: 2.8125rem;
+  line-height: 1.3;
+  margin-bottom: 1.6875rem;
+}
+
+.projects-col__title {
+  font-size: 1.875rem;
+  line-height: 1.3;
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+@media (min-width: 576px) {
+  .projects-col__title {
+    margin-top: 0;
+  }
+}
+
+.projects-col__image {
+  width: 100%;
+  display: block;
+}
+
+/* ==================== ABOUT ==================== */
+.about__container {
+  padding-top: 5.125rem;
+  padding-bottom: 5.125rem;
+}
+
+.about__title {
+  font-size: 2.8125rem;
+  line-height: 1.3;
+  margin-bottom: 1.6875rem;
+}
+
+/* ==================== CONTACT ==================== */
+.contact__container {
+  padding-top: 5.125rem;
+  padding-bottom: 5.125rem;
+}
+
+.contact__title {
+  font-size: 2.8125rem;
+  line-height: 1.3;
+  margin-bottom: 1.6875rem;
+}
